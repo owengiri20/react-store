@@ -1,5 +1,6 @@
 import React from "react"
 
+import "../styles/homepage.styles.scss"
 interface Props {}
 
 function Hompage(props: Props) {
