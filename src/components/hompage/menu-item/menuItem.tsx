@@ -1,17 +1,22 @@
 import React from "react"
-import "../../styles/homepage-styles/menu-item.styles.scss"
+import "../../../styles/homepage-styles/menu-item.styles.scss"
 
 interface MenuItemProps {
 	title: string
 	subTitle: string
+	imgSrc?: string
+	size?: string
 }
 
-const MenuItem = ({ title, subTitle }: MenuItemProps) => {
+const MenuItem = ({ title, subTitle, imgSrc, size }: MenuItemProps) => {
 	return (
-		<div className="menu-item">
+		<div
+			style={{ backgroundImage: `url(${imgSrc ? imgSrc : "default/image"}` }}
+			className={`menu-item ${size ? (size === "large" ? "large-img" : "small-img") : ""}`}
+		>
 			<div className="content">
 				<h1 className="title">{title}</h1>
-				<span className="subtitle">{subTitle}</span>
+				<span className="subtitle">{"Shop Now"}</span>
 			</div>
 		</div>
 	)
