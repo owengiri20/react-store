@@ -10,12 +10,10 @@ interface MenuItemProps {
 
 const MenuItem = ({ title, subTitle, imgSrc, size }: MenuItemProps) => {
 	return (
-		<div
-			style={{ backgroundImage: `url(${imgSrc ? imgSrc : "default/image"}` }}
-			className={`menu-item ${size ? (size === "large" ? "large-img" : "small-img") : ""}`}
-		>
+		<div className={`menu-item ${size ? (size === "large" ? "large-img" : "small-img") : ""}`}>
+			<div className="background-image" style={{ backgroundImage: `url(${imgSrc ? imgSrc : "default/image"}` }} />
 			<div className="content">
-				<h1 className="title">{title}</h1>
+				<h1 className="title">{title.toUpperCase()}</h1>
 				<span className="subtitle">{"Shop Now"}</span>
 			</div>
 		</div>
