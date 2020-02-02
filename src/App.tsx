@@ -1,27 +1,18 @@
 import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import { Route, Switch } from "react-router-dom"
+import ShopPage from "./components/shop/shopPage"
 import Hompage from "./pages/hompage/hompage"
-import { Route, Switch, Link } from "react-router-dom"
+import "./App.css"
 
 const App: React.FC = () => {
 	return (
 		<div className="App">
 			<Switch>
 				<Route exact path="/" component={Hompage} />
-				<Route exact path="/:id" component={TestPage} />
+				<Route exact path="/shop" component={ShopPage} />
 			</Switch>
 		</div>
 	)
 }
 
 export default App
-
-interface Props {}
-
-function TestPage(props: Props) {
-	const {} = props
-	console.log(props)
-
-	return <div>Test Page</div>
-}

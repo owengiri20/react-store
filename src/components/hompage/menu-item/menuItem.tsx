@@ -1,7 +1,6 @@
 import React from "react"
 import { withRouter, RouteComponentProps } from "react-router-dom"
-import "../../../styles/homepage-styles/menu-item.styles.scss"
-import { connect } from "http2"
+import "../../../styles//menu-item.styles.scss"
 interface MenuItemProps {
 	title: string
 	subTitle: string
@@ -16,8 +15,6 @@ const MenuItem = (props: any | MenuItemProps | RouteComponentProps) => {
 		<div
 			className={`menu-item ${size ? (size === "large" ? "large-img" : "small-img") : ""}`}
 			onClick={() => {
-				console.log(linkUrl)
-
 				history.push(linkUrl)
 			}}
 		>
