@@ -40,8 +40,9 @@ function Directory(props: Props) {
 	])
 	return (
 		<div className="directory-menu">
-			{sections.map(({ title, imageUrl, id, size }) => {
-				return <MenuItem key={id} title={title} imgSrc={imageUrl} subTitle={title} size={size} />
+			{sections.map(s => {
+				const { id } = s
+				return <MenuItem key={id} {...s} />
 			})}
 		</div>
 	)
