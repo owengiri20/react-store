@@ -4,6 +4,7 @@ import ShopPage from "./components/shop/shopPage"
 import Hompage from "./pages/hompage/hompage"
 import "./App.css"
 import Header from "./components/header/header/header"
+import SignInSignUp from "./components/authentication/signInSignUp"
 
 const App: React.FC = () => {
 	return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
 			<Switch>
 				<Route exact path="/" component={Hompage} />
 				<Route exact path="/shop" component={ShopPage} />
+				<Route exact path="/signin" component={SignInSignUp} />
 			</Switch>
 		</div>
 	)
