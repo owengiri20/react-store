@@ -1,4 +1,6 @@
 import React from "react"
+import { FormInput } from "./formInput"
+import { CustomButton } from "../subComponents/customButton"
 
 interface Props {}
 
@@ -19,29 +21,30 @@ const SignIn = (props: Props) => {
 		<div className="sign-in">
 			<h2>I already have an account</h2>
 			<span>Sign in with your email and password</span>
-
 			<form action="" onSubmit={handleSubmit}>
-				<label htmlFor="email">Email</label>
-				<input
-					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+				<FormInput
+					handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setEmail(e.target.value)
 					}}
-					type="text"
+					type="email"
 					name="email"
 					required
 					value={email}
+					label={"email"}
 				/>
-				<label htmlFor="password">Password</label>
-				<input
-					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+				<FormInput
+					handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setPassword(e.target.value)
 					}}
 					type="password"
 					name="password"
-					required
+					required={true}
 					value={password}
+					label={"password"}
 				/>
-				<input type="submit" name="" value="submit" id="" />
+				<CustomButton type="submit" name="" value="submit" id="">
+					sign in
+				</CustomButton>
 			</form>
 		</div>
 	)
