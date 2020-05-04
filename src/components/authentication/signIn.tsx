@@ -1,6 +1,7 @@
 import React from "react"
 import { FormInput } from "./formInput"
 import { CustomButton } from "../subComponents/customButton"
+import { signInWithGoogle } from "../../firebase/firebase.utils"
 
 interface Props {}
 
@@ -44,6 +45,10 @@ const SignIn = (props: Props) => {
 				/>
 				<CustomButton type="submit" name="" value="submit" id="">
 					sign in
+				</CustomButton>
+
+				<CustomButton type="button" onClick={signInWithGoogle} name="" value="" id="">
+					sign in with google
 				</CustomButton>
 			</form>
 		</div>
