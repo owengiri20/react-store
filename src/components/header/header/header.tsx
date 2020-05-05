@@ -2,10 +2,13 @@ import React from "react"
 import "../../../styles/header.styles.scss"
 import { Link } from "react-router-dom"
 import { ReactComponent as Crown } from "../../../assets/images/crown.svg"
+import { authx } from "../../../controllers/auth"
+import { auth } from "firebase"
 interface Props {}
 
 const Header = (props: Props) => {
 	const {} = props
+	const authxx = authx.useContainer()
 
 	return (
 		<div className="header">
@@ -20,6 +23,15 @@ const Header = (props: Props) => {
 				<Link className="option" to="/shop">
 					CONTACT
 				</Link>
+				{authxx.currentUser ? (
+					<div className="option" onClick={() => auth().signOut()}>
+						sign out
+					</div>
+				) : (
+					<Link className="option" to="./signin">
+						sign in
+					</Link>
+				)}
 			</div>
 		</div>
 	)

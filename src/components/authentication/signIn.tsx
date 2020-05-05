@@ -43,13 +43,16 @@ const SignIn = (props: Props) => {
 					value={password}
 					label={"password"}
 				/>
-				<CustomButton type="submit" name="" value="submit" id="">
-					sign in
-				</CustomButton>
 
-				<CustomButton type="button" onClick={signInWithGoogle} name="" value="" id="">
-					sign in with google
-				</CustomButton>
+				<div className="buttons">
+					<CustomButton type="submit" name="" value="submit" id="">
+						sign in
+					</CustomButton>
+
+					<CustomButton isGoogleSignIn type="button" onClick={signInWithGoogle} name="" value="" id="">
+						sign in with google
+					</CustomButton>
+				</div>
 			</form>
 		</div>
 	)

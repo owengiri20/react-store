@@ -6,12 +6,13 @@ import "./App.css"
 import Header from "./components/header/header/header"
 import SignInSignUp from "./components/authentication/signInSignUp"
 import { auth } from "./firebase/firebase.utils"
+import { authx } from "../src/controllers/auth"
 
-const App: React.FC = () => {
-	const [currentUser, setCurrentUser] = React.useState<firebase.User | null>(null)
+const AppInner: React.FC = () => {
+	const authxx = authx.useContainer()
 	React.useEffect(() => {
 		auth.onAuthStateChanged(user => {
-			setCurrentUser(user)
+			authxx.setCurrentUser(user)
 			console.log(user)
 		})
 	})
@@ -24,6 +25,14 @@ const App: React.FC = () => {
 				<Route exact path="/signin" component={SignInSignUp} />
 			</Switch>
 		</div>
+	)
+}
+
+export const App = () => {
+	return (
+		<authx.Provider>
+			<AppInner />
+		</authx.Provider>
 	)
 }
 

@@ -7,13 +7,14 @@ interface Props {
 	value: string
 	id: string
 	onClick?: () => void
+	isGoogleSignIn?: boolean
 }
 
 const CustomButton = (props: Props) => {
 	const {} = props
 
 	return (
-		<button type={props.type || "button"} onClick={props.onClick} className="custom-button">
+		<button type={props.type || "button"} onClick={props.onClick} className={`${props.isGoogleSignIn ? "google-sign-in" : ""} custom-button`}>
 			{props.children}
 		</button>
 	)
