@@ -27,7 +27,7 @@ const SignIn = (props: Props) => {
 					handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setEmail(e.target.value)
 					}}
-					type="email"
+					inpType="email"
 					name="email"
 					required
 					value={email}
@@ -37,7 +37,7 @@ const SignIn = (props: Props) => {
 					handleChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setPassword(e.target.value)
 					}}
-					type="password"
+					inpType="password"
 					name="password"
 					required={true}
 					value={password}
